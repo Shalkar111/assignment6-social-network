@@ -1,0 +1,24 @@
+Verification date: 2026-11-01
+Compiler/runtime: Oracle JDK 24.0.1; application and tests compiled with --release 17
+Test framework: JUnit Jupiter 5.10.2 via JUnit Platform Console 1.10.2
+Tests found: 29
+Tests successful: 29
+Tests failed: 0
+
+Stress test: 4 producer tasks x 1,000 events
+Source notifications: 4,000
+Aggregator total: 4,000
+Summary notifications: 4,000
+
+Concurrent registry test: 3 publishers x 1,000 events plus subscription-changing task
+Permanent-listener deliveries: 3,000
+
+Demo verified with configurable pool size 3 and 4:
+Feed posts: 2
+Activity events: 3
+Notifications including summaries: 6
+Trending p2: 7
+Tree engagement: 30
+Tree groups: 2, content: 6
+Moderation reports: 1
+Report group: g1, flagged elements: 1

@@ -1,0 +1,95 @@
+@startuml
+!pragma layout smetana
+skinparam monochrome true
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam dpi 150
+hide empty members
+top to bottom direction
+interface "Subject<E>" as Subject {
+  subscribe(type, observer)
+  unsubscribe(type, observer)
+  publish(event)
+}
+interface "Observer<E>" as Observer {
+  onEvent(event)
+}
+class "EventSubject<E>" as EventSubject {
+  ConcurrentHashMap registry
+}
+class PostSource
+class ReactionSource
+class ActivityAggregator
+class FeedListener
+class NotificationListener
+class TrendingListener
+class ModerationListener
+class InspectionService
+class ReportStore
+class NetworkEvent <<record>> {
+  type
+  groupId
+  contentId
+  value
+  text
+}
+Subject <|.. EventSubject
+EventSubject <|-- PostSource
+EventSubject <|-- ReactionSource
+EventSubject <|-- ActivityAggregator
+Observer <|.. ActivityAggregator
+Observer <|.. FeedListener
+Observer <|.. NotificationListener
+Observer <|.. TrendingListener
+Observer <|.. ModerationListener
+Observer <|.. InspectionService
+Observer <|.. ReportStore
+EventSubject o-- "0..*" Observer : by event type
+EventSubject ..> NetworkEvent
+ModerationListener --> Subject : flags
+InspectionService --> Subject : reports
+interface Element {
+  id()
+  text()
+  accept(Visitor<R>)
+}
+class Community <<record>>
+class Group <<record>>
+class Post <<record>>
+class Comment <<record>>
+class Photo <<record>>
+class Link <<record>>
+class Video <<record>>
+Element <|.. Community
+Element <|.. Group
+Element <|.. Post
+Element <|.. Comment
+Element <|.. Photo
+Element <|.. Link
+Element <|.. Video
+Community *-- "0..*" Element : children
+Group *-- "0..*" Element : children
+interface "Visitor<R>" as Visitor {
+  visit(Community)
+  visit(Group)
+  visit(Post)
+  visit(Comment)
+  visit(Photo)
+  visit(Link)
+  visit(Video)
+}
+class EngagementVisitor
+class SummaryVisitor
+class FilterVisitor
+class JsonVisitor
+class ContentLengthVisitor
+Visitor <|.. EngagementVisitor
+Visitor <|.. SummaryVisitor
+Visitor <|.. FilterVisitor
+Visitor <|.. JsonVisitor
+Visitor <|.. ContentLengthVisitor
+Element ..> Visitor : accept
+InspectionService --> Group : related group
+InspectionService ..> FilterVisitor : creates per event
+InspectionService ..> JsonVisitor : creates per event
+@enduml
