@@ -133,16 +133,16 @@ class NetworkTest {
     }
 
     @Test void numericVisitorMatchesHandCalculation() {
-        // Students: 10 + 3 + 5 + 2 = 20; Clubs: 4. Total = 24.
-        assertEquals(24, DemoData.community().accept(new EngagementVisitor()));
+        // Students: 10 + 3 + 5 + 2 = 20; Clubs: 4 + 6 = 10. Total = 30.
+        assertEquals(30, DemoData.community().accept(new EngagementVisitor()));
     }
 
     @Test void statefulVisitorAccumulatesAcrossBothGroups() {
         SummaryVisitor visitor = new SummaryVisitor();
         DemoData.community().accept(visitor);
         assertEquals(2, visitor.groups());
-        assertEquals(5, visitor.content());
-        assertEquals(24, visitor.reactions());
+        assertEquals(6, visitor.content());
+        assertEquals(30, visitor.reactions());
     }
 
     @Test void filterReturnsMatchingElements() {

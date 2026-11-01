@@ -11,4 +11,5 @@ public final class EngagementVisitor implements Visitor<Integer> {
     public Integer visit(Comment node) { return node.reactions(); }
     public Integer visit(Photo node) { return node.reactions(); }
     public Integer visit(Link node) { return node.reactions(); }
+    public Integer visit(Video node) { return node.reactions(); }
 }

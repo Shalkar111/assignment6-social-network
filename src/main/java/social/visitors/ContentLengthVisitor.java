@@ -11,4 +11,5 @@ public final class ContentLengthVisitor implements Visitor<Integer> {
     public Integer visit(Comment node) { return node.text().length(); }
     public Integer visit(Photo node) { return node.text().length(); }
     public Integer visit(Link node) { return node.text().length(); }
+    public Integer visit(Video node) { return node.text().length(); }
 }

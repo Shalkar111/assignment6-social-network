@@ -7,4 +7,5 @@ public interface Visitor<R> {
     R visit(Comment comment);
     R visit(Photo photo);
     R visit(Link link);
+    R visit(Video video);
 }

@@ -18,4 +18,5 @@ public final class FilterVisitor implements Visitor<List<Element>> {
     public List<Element> visit(Comment node) { return match(node); }
     public List<Element> visit(Photo node) { return match(node); }
     public List<Element> visit(Link node) { return match(node); }
+    public List<Element> visit(Video node) { return match(node); }
 }

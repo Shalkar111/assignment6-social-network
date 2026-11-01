@@ -36,4 +36,5 @@ public final class JsonVisitor implements Visitor<String> {
     public String visit(Comment node) { return leaf("comment", node, node.reactions()); }
     public String visit(Photo node) { return leaf("photo", node, node.reactions()); }
     public String visit(Link node) { return leaf("link", node, node.reactions()); }
+    public String visit(Video node) { return leaf("video", node, node.reactions()); }
 }

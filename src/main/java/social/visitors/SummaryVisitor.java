@@ -13,6 +13,7 @@ public final class SummaryVisitor implements Visitor<Void> {
     public Void visit(Comment node) { return collect(node.reactions()); }
     public Void visit(Photo node) { return collect(node.reactions()); }
     public Void visit(Link node) { return collect(node.reactions()); }
+    public Void visit(Video node) { return collect(node.reactions()); }
     public int groups() { return groups; }
     public int content() { return content; }
     public int reactions() { return reactions; }
