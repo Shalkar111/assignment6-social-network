@@ -22,3 +22,11 @@ Tree engagement: 30
 Tree groups: 2, content: 6
 Moderation reports: 1
 Report group: g1, flagged elements: 1
+
+GitHub Actions verification:
+Java: Temurin 17
+Command: mvn --batch-mode --no-transfer-progress test
+Tests run: 29; failures: 0; errors: 0; skipped: 0
+Build: SUCCESS
+Demo: passed on Java 17
+Run: https://github.com/Shalkar111/assignment6-social-network/actions/runs/41320788304

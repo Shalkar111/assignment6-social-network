@@ -72,4 +72,6 @@ The README lists exact changed paths and commands to inspect both commits. The s
 
 Run ./run.sh 3 to compile and start the demo with a three-thread producer pool. Run ./run.sh 4 to select four threads. Run ./test.sh for the test suite; its first run downloads the JUnit runner. Maven users may run mvn test.
 
-The source archive includes the application, tests, pom.xml, scripts, README, this report, defense notes and UML source/image. GitHub publication and LMS submission are separate remaining steps.
+Repository: https://github.com/Shalkar111/assignment6-social-network
+
+The repository includes the application, tests, pom.xml, scripts, README, this report, defense notes and UML source/image. Submit the repository link and attach this report in LMS.

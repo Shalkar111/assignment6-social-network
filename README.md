@@ -2,6 +2,14 @@
 
 Assignment 6, variant 16. Java 17, Observer and Visitor patterns.
 
+Repository: https://github.com/Shalkar111/assignment6-social-network
+
+## LMS submission
+
+Submit the repository link above and attach [SocialNetwork_Report.docx](docs/SocialNetwork_Report.docx).
+The UML diagram, test sources, design decisions and extension commits are included in this repository.
+ZIP and Git bundle files are not required by the assignment.
+
 ## Run and test
 
 Install JDK 17 or newer. On macOS/Linux:
