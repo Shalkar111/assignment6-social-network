@@ -1,0 +1,2 @@
+package social.events;
+public enum EventType { POST_CREATED, REACTION_ADDED, ACTIVITY_SUMMARY, CONTENT_FLAGGED, REPORT_READY }
